@@ -1,0 +1,39 @@
+html ,body{
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.main-content{
+    text-align: center;
+}
+h1{
+    color: black;
+}
+.custom {
+    width: 178px !important;
+}
+.custom1 {
+  position: absolute;
+  left: 13px;
+    width: 182px;
+    text-align: center;
+}
+
+#buttona {
+   position: absolute;
+   bottom: 13px;
+   left: 13px;
+ }
+
+ #buttone {
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
+  }
+
+body{
+  background-color: #71BDF8;
+
+}
