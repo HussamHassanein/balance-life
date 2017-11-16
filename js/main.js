@@ -1,10 +1,11 @@
   var vals =[];
 function showtext(){
-  
+
  var text = document.getElementById("txtarea");
 
  var div = document.createElement('div');
  div.innerHTML = text.value;
+ div.setAttribute("contentEditable","true");
  //div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css
  document.body.appendChild(div);
  vals.push(text.value);
