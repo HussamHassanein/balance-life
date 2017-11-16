@@ -2,17 +2,33 @@
 function showtext(){
   
  var text = document.getElementById("txtarea");
+
  var div = document.createElement('div');
  div.innerHTML = text.value;
  //div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css
  document.body.appendChild(div);
  vals.push(text.value);
 
+div.innerHTML = text.value;
+document.body.appendChild(div);
+//document.body.appendChild(x);
+//document.getElementById(div).contentEditable = "true";
+//x.innerHTML=text.value;
 
-  //var showarea = document.getElementById("adduserdata");
+ //document.querySelector("[contenteditable=true]");
+ //var showarea = document.getElementById("adduserdata");
  //showarea.innerHTML=text.value;
 
 }
+
+
+function myFunction() {
+    var str=document.getElementById("txt").value;
+    var n=str.replace("");
+    var m=n.replace();
+    document.getElementById("txt").value=m;
+}
+
 function relocate_home()
 {
      location.href = "main.html";
