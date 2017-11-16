@@ -1,11 +1,13 @@
-
+  var vals =[];
 function showtext(){
+  
  var text = document.getElementById("txtarea");
- var div = document.createElement("div");
- //var x = document.createElement("P");
-div.setAttribute('contenteditable', 'true');
-//div.setAttribute("style", "mystyle");
-// and make sure myclass has some styles in css
+
+ var div = document.createElement('div');
+ div.innerHTML = text.value;
+ //div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css
+ document.body.appendChild(div);
+ vals.push(text.value);
 
 div.innerHTML = text.value;
 document.body.appendChild(div);
@@ -31,7 +33,21 @@ function relocate_home()
 {
      location.href = "main.html";
 }
-function back_plan()
+function submit_social()
 {
+     localStorage.setItem('social', JSON.stringify(vals));
      location.href = "myplan.html";
+}
+function submit_studiesandwork()
+{
+     localStorage.setItem('studiesandwork', JSON.stringify(vals));
+     location.href = "myplan.html";
+}
+
+function submit_exercise(){
+  localStorage.setItem('exercise', JSON.stringify(vals));
+  location.href = "myplan.html";
+}
+function back_plan()
+{  location.href = "myplan.html";
 }
