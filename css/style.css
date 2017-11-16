@@ -37,3 +37,33 @@ body{
   background-color: #71BDF8;
 
 }
+#back
+{
+  position: absolute;
+  left: 13px;
+  bottom: 13px;
+
+}
+
+#submit
+{
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+}
+#hours
+{
+  position: absolute;
+  right: 8px;
+    font-size: 20px;
+}
+
+p {
+    font-size: 30px;
+}
+select {
+  position: absolute;
+  right: 80px;
+  font-size: 20px;
+
+}

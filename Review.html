@@ -2,14 +2,108 @@
 <html>
 <head>
 <title>Page Title</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-<!--<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/style.css">
--->
+<style>
+
+input[type="checkbox"] {
+  font-size: 35px;
+   padding: 100px;
+}
+  h1 {
+  text-align: center;
+
+}
+p {
+color: black ;
+
+}
+#back{
+  font-size: 35px;
+}
+
+  </style>
 </head>
 <body>
 
 <h1>Review</h1>
+<p>Mark the task you have done</p>
 
+
+
+<script>
+var keyy=['social','studiesandwork','exercise']
+var lenkey=keyy.length;
+  var text="";
+  var text1="";
+  var len;
+  var vals ;
+  var val;
+for (var j = 0; j < lenkey; j++) {
+  var div = document.createElement("div");
+   div.innerHTML = keyy[j];
+   document.body.appendChild(div);
+   div.setAttribute("style", "font-size: 35px; color:Black;");
+    vals = JSON.parse(localStorage.getItem(keyy[j]));
+      len =vals.length;
+  for (var i = 0; i < len; i++) {
+text1 = vals[i]  + "<br>";
+   var div = document.createElement("div");
+    div.innerHTML = vals[i];
+    document.body.appendChild(div);
+    div.setAttribute("style", "font-size: 25px;");
+    var x = document.createElement("INPUT");
+    x.setAttribute("id", "check");
+    x.setAttribute("type", "checkbox");
+    x.setAttribute("value", "val[i]");
+    x.setAttribute("style","zoom:3");
+    document.body.appendChild(x);
+
+
+}
+}
+/*
+var div = document.createElement("div");
+ div.innerHTML = "Studies/Work";
+ document.body.appendChild(div);
+ div.setAttribute("style", "font-size: 35px; color:Black;");
+val = JSON.parse(localStorage.getItem('studiesandwork'));
+  len =val.length;
+for (var i = 0; i < len; i++) {
+
+  var div = document.createElement("div");
+  div.innerHTML = val[i];
+  document.body.appendChild(div);
+  div.setAttribute("style", "font-size: 25px;");
+  var y = document.createElement("INPUT");
+  y.setAttribute("id", "check");
+  y.setAttribute("type", "checkbox");
+  y.setAttribute("value", "val[i]");
+  y.setAttribute("style","zoom:3");
+  document.body.appendChild(y);
+
+
+
+}
+*/
+</script>
+
+
+<div id="myDIV">
+<p id="dem"></p>
+</div>
+<div class="container container-fluid">
+
+    <button id ="back" type="button" class="btn btn-danger custom" onclick="myFunction()">Back</button>
+
+  </div>
+  <script>
+  function myFunction() {
+     location.href="Main.html";
+  }
+</script>
 </body>
 </html>
