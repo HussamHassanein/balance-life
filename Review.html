@@ -10,6 +10,10 @@
 
 <script src="js/main.js"></script>
 
+<link rel="stylesheet" type="text/html" href="Feedback.html">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <style>
 
 input[type="checkbox"] {
@@ -31,19 +35,26 @@ color: black ;
   </style>
 </head>
 <body>
+  <a href="Feedback.html"></a>
+
 
 <h1>Review</h1>
 <p>Mark the task you have done</p>
 
 
-<script>
-var keyy=['social','studiesandwork','exercise']
+
+
+<script >
+
+
+var keyy=['social','studiesandwork','exercise'];
 var lenkey=keyy.length;
   var text="";
   var text1="";
   var len;
   var vals ;
   var val;
+
 for (var j = 0; j < lenkey; j++) {
   var div = document.createElement("div");
    div.innerHTML = keyy[j];
@@ -52,17 +63,37 @@ for (var j = 0; j < lenkey; j++) {
       vals = JSON.parse(localStorage.getItem(keyy[j]));
       len =vals.length;
   for (var i = 0; i < len; i++) {
-    text1 = vals[i]  + "<br>";
-   var div = document.createElement("div");
-    div.innerHTML = vals[i];
-    document.body.appendChild(div);
-    div.setAttribute("style", "font-size: 25px;");
+
+
+   //var div = document.createElement("div");
+    //div.innerHTML = vals[i];
+    //document.body.appendChild(div);
+    //div.setAttribute("style", "font-size: 25px;");''
+
+
+
+    var newElem = document.createElement("BR");
+
+
+
     var x = document.createElement("INPUT");
-    x.setAttribute("id", "check");
+    x.setAttribute("id", vals[i]);
     x.setAttribute("type", "checkbox");
-    x.setAttribute("value", "val[i]");
-    x.setAttribute("style","zoom:3");
-    document.body.appendChild(x);
+    x.setAttribute("name", vals[i]);
+    x.setAttribute("style","zoom:2.5 ; position: absolute; right: 13px;");
+    x.innerHTML = vals[i];
+    var la = document.createElement("LABEL");
+        la.setAttribute("id", "myLabel");
+        la.setAttribute("for", vals[i]);
+        la.setAttribute("style","font-size: 35px");
+        la.innerHTML = vals[i];
+       document.body.appendChild(la);
+
+       document.body.appendChild(x);
+     document.body.appendChild(newElem);
+      // x.insertBefore(newElem,la);
+    //document.body.insertBefore( y ,document.getElementsByTagName(vals[i]));
+
 
 
    }
@@ -99,8 +130,17 @@ for (var i = 0; i < len; i++) {
 
 
 }
+
 */
+
 </script>
+
+
+<div class="container">
+
+  <button id ="submit" type="button" class ="btn btn-danger custom" onclick="call()">Submit</button>
+
+</div>
 
 
 <div id="myDIV">
