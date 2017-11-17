@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 <link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/style.css">
+
 <script src="js/main.js"></script>
 
 <link rel="stylesheet" type="text/html" href="Feedback.html">
@@ -42,6 +43,7 @@ color: black ;
 
 
 
+
 <script >
 
 
@@ -58,9 +60,10 @@ for (var j = 0; j < lenkey; j++) {
    div.innerHTML = keyy[j];
    document.body.appendChild(div);
    div.setAttribute("style", "font-size: 35px; color:Black;");
-    vals = JSON.parse(localStorage.getItem(keyy[j]));
+      vals = JSON.parse(localStorage.getItem(keyy[j]));
       len =vals.length;
   for (var i = 0; i < len; i++) {
+
 
    //var div = document.createElement("div");
     //div.innerHTML = vals[i];
@@ -93,9 +96,18 @@ for (var j = 0; j < lenkey; j++) {
 
 
 
+   }
+
 }
-}
+
+
+
 /*
+
+if(document.getElementById('check').checked) {
+     localStorage.setItem('value', true);
+     x.setAttribute("checked",true);
+ }
 var div = document.createElement("div");
  div.innerHTML = "Studies/Work";
  document.body.appendChild(div);
@@ -134,11 +146,17 @@ for (var i = 0; i < len; i++) {
 <div id="myDIV">
 <p id="dem"></p>
 </div>
-<div class="container container-fluid">
+<div>
 
-    <button id ="back" type="button" class="btn btn-danger custom" onclick="myFunction()">Back</button>
+    <button id ="backfromreview" type="button" class="btn btn-danger" onclick="myFunction()">Back</button>
 
   </div>
+
+<!--  <div>
+    <button id ="submittofeedback" type="button" class ="btn btn-danger" onclick="submit_plan()">Submit</button>
+  </div>
+-->
+
   <script>
   function myFunction() {
      location.href="Main.html";
