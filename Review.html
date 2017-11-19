@@ -25,9 +25,26 @@ input[type="checkbox"] {
   text-align: center;
 
 }
+#DropdownIdupdated{
+  background-color: white;
+  display: inline-block;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
 
 
   </style>
+  <script type="text/javascript">
+         window.onload = function () {
+             var ddl = document.getElementById('mycontainer').getElementsByTagName("select")[0];
+             for (var i = 1; i <= 24; i++) {
+                 var theOption = new Option;
+                 theOption.text = i;
+                 theOption.value = i;
+                 ddl.options[i] = theOption;
+             }
+         };
+     </script>
+
 </head>
 <body>
   <a href="Feedback.html"></a>
@@ -57,15 +74,9 @@ for (var j = 0; j < lenkey; j++) {
    div.setAttribute("style", "font-size: 30px; color:Black;");
       vals = JSON.parse(localStorage.getItem(keyy[j]));
       len =vals.length;
+
   for (var i = 0; i < len; i++) {
-
-
-
-
     var newElem = document.createElement("BR");
-
-
-
     var x = document.createElement("INPUT");
     var m= vals[i] + i;
     x.setAttribute("id", vals[i] );
@@ -75,61 +86,29 @@ for (var j = 0; j < lenkey; j++) {
     x.setAttribute("class",vals[i]);
     x.setAttribute("style","zoom:2.5 ; position: absolute; right: 13px;");
     x.innerHTML = vals[i];
+
     var la = document.createElement("LABEL");
         la.setAttribute("id", "myLabel");
         la.setAttribute("for", vals[i]);
         la.setAttribute("style","font-size: 25px ;color:#eceff1");
         la.innerHTML = vals[i];
-       document.body.appendChild(la);
 
-       document.body.appendChild(x);
-     document.body.appendChild(newElem);
-
-
-
-   }
-
-}
-// x.insertBefore(newElem,la);
-//document.body.insertBefore( y ,document.getElementsByTagName(vals[i]));
+        if(vals[i]!=null){
+          document.body.appendChild(x);
+          document.body.appendChild(la);
+          document.body.appendChild(newElem);
+       }
 
 
-//var div = document.createElement("div");
- //div.innerHTML = vals[i];
- //document.body.appendChild(div);
- //div.setAttribute("style", "font-size: 25px;");''
 
 
-/*
-
-if(document.getElementById('check').checked) {
-     localStorage.setItem('value', true);
-     x.setAttribute("checked",true);
- }
-var div = document.createElement("div");
- div.innerHTML = "Studies/Work";
- document.body.appendChild(div);
- div.setAttribute("style", "font-size: 35px; color:Black;");
-val = JSON.parse(localStorage.getItem('studiesandwork'));
-  len =val.length;
-for (var i = 0; i < len; i++) {
-
-  var div = document.createElement("div");
-  div.innerHTML = val[i];
-  document.body.appendChild(div);
-  div.setAttribute("style", "font-size: 25px;");
-  var y = document.createElement("INPUT");
-  y.setAttribute("id", "check");
-  y.setAttribute("type", "checkbox");
-  y.setAttribute("value", "val[i]");
-  y.setAttribute("style","zoom:3");
-  document.body.appendChild(y);
+      }
 
 
+//   }
 
 }
 
-*/
 
 </script>
 
@@ -167,11 +146,11 @@ for (var i = 0; i < len; i++) {
     var get;
     get = JSON.parse(localStorage.getItem(keyy[j]));
     var len =get.length;
-    for (var i = 0; i < len; i++) {
+    for (var i = 0; i <len; i++) {
     //localStorage.setItem('Input', get[i]);
       var s1 = document.getElementById(get[i]);
     localStorage.setItem('True', s1);
-      if ( s1.checked) {
+      if (s1!=null&& s1.checked) {
         //delete it
 //var child = document.getElementById(get[i]);
           //child.parentNode.removeChild(child);
@@ -180,6 +159,10 @@ for (var i = 0; i < len; i++) {
 //removeElm(s1);
      s1.parentElement.removeChild(s1);
       }
+
+
+
+
     }
     localStorage.setItem(keyy[j], JSON.stringify(get));
     }
@@ -196,6 +179,71 @@ for (var i = 0; i < len; i++) {
 
   }
 
+  // x.insertBefore(newElem,la);
+  //document.body.insertBefore( y ,document.getElementsByTagName(vals[i]));
+
+
+  //var div = document.createElement("div");
+   //div.innerHTML = vals[i];
+   //document.body.appendChild(div);
+   //div.setAttribute("style", "font-size: 25px;");''
+
+
+  /*
+  if(s1.checked){
+s1.removeChild(s1.lastChild);
+  }
+
+  if(document.getElementById('check').checked) {
+       localStorage.setItem('value', true);
+       x.setAttribute("checked",true);
+   }
+  var div = document.createElement("div");
+   div.innerHTML = "Studies/Work";
+   document.body.appendChild(div);
+   div.setAttribute("style", "font-size: 35px; color:Black;");
+  val = JSON.parse(localStorage.getItem('studiesandwork'));
+    len =val.length;
+  for (var i = 0; i < len; i++) {
+
+    var div = document.createElement("div");
+    div.innerHTML = val[i];
+    document.body.appendChild(div);
+    div.setAttribute("style", "font-size: 25px;");
+    var y = document.createElement("INPUT");
+    y.setAttribute("id", "check");
+    y.setAttribute("type", "checkbox");
+    y.setAttribute("value", "val[i]");
+    y.setAttribute("style","zoom:3");
+    document.body.appendChild(y);
+  }
+
+  */
+</script>
+
+
+<div >
+  <p style ="color:black; font-size: 25px">sleep</>
+  <p>Number of hours slept</p>
+
+  <form id="form1">
+      <div>
+        <p id ="hours">Hours</p>
+          <div id="mycontainer">
+              <select id="DropdownIdupdated" name="Dropdown" class="Dropdown" >
+                  <option value="0"></option>
+              </select>
+          </div>
+      </div>
+      </form>
+</div>
+<script>
+function saveInput(){
+  var eupdated = document.getElementById("DropdownIdupdated");
+ var strUser = eupdated.options[eupdated.selectedIndex].text;
+
+ localStorage["hours"]=strUser;
+}
 </script>
 
 <!--space for the buttons when scrolling

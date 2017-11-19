@@ -145,9 +145,13 @@ function submit_exercise(){
 function back_plan()
 {  location.href = "myplan.html";}
 
-function reset_social(){
+function reset_all(){
+  JSON.parse(localStorage.removeItem('sleep'));
   JSON.parse(localStorage.removeItem('social'));
+  JSON.parse(localStorage.removeItem('exercise'));
+  JSON.parse(localStorage.removeItem('studiesandwork'));
 }
+
 
 
 

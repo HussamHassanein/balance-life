@@ -46,11 +46,12 @@ var val;
     len =vals.length;
 for (var i = 0; i < len; i++) {
   text = vals[i]  + "<br>";
+  if (vals[i]!=null){
  var div = document.createElement("div");
   div.innerHTML = vals[i];
   document.body.appendChild(div);
   div.setAttribute("contentEditable","true");
-
+}
 }
 </script>
 

@@ -69,13 +69,17 @@ get = JSON.parse(localStorage.getItem(keyy[j]));
 var len =get.length;
 for (var i = 0; i < len; i++) {
 //localStorage.setItem('Input', get[i]);
+//var newElem = document.getElementById("BR");
+var x = document.getElementById("INPUT");
+var la = document.getElementById("LABEL");
+var newElem = document.getElementById("BR");
+
 
   if ( get[i] != null) {
     //delete it
     //text += get[i]  + "<br>" ;
     //document.getElementById("demo").innerHTML =text;
     count ++;
-
   }
 
 }
