@@ -10,71 +10,79 @@ background-size: cover;
 }
 h1{
     color: black;
+    text-align: center;
+
 }
+
 .custom {
     width: 178px !important;
 }
-.custom1 {
-  position: absolute;
-  left: 13px;
-    width: 182px;
-    text-align: center;
-}
 
-#buttona {
-   position: absolute;
-   bottom: 13px;
-   left: 13px;
- }
-
- #buttone {
-    position: absolute;
-    bottom: 13px;
-    right: 13px;
-
-  }
-#Labell {
-  font-size: 120px;
-  color: Black;
-}
-body{
-  background-color: #71BDF8;
-
-}
-#back
-{
-  position: absolute;
-  left: 13px;
+.back{
+  position: fixed;
   bottom: 13px;
-
+  left: 13px;
+  width: 112px;
+  text-align: center;
 }
-#backfromreview
-{
-  position:relative;
-  left: 0;
-  bottom: 0;
-
-}
-#submittofeedback{
-    position:sticky;
-    right: 0%;
-    bottom: 0;
-}
-#submit
-{
-  position: absolute;
+.forward{
+  position: fixed;
+  bottom: 13px;
   right: 13px;
-  bottom: 13px;
+  width: 112px;
+  text-align: center;
 }
+.backReview{
+  position: fixed;
+  bottom: 13px;
+  left: 13px;
+  margin-left: 1px;
+  width: 112px;
+  text-align: center;
+}
+.forwardReview{
+  position: fixed;
+  bottom: 13px;
+  right: 13px;
+  margin-left: 110px;
+  width: 112px;
+  text-align: center;
+}
+
+
+#sleep{
+  font-size: 30px;
+
+}
+
+#mytitle{
+  text-align: center;
+
+}
+
+
+#Labell {
+  font-size: 32px;
+  display: white;
+  color: white;
+}
+
+body{
+  background-color: #0E7C7B;
+
+}
+
+
 #hours
 {
   position: absolute;
   right: 8px;
-    font-size: 20px;
+  font-size: 20px;
 }
 
 p {
-    font-size: 30px;
+    font-size: 20px;
+    color: #ffffff;
 }
 select {
   position: absolute;

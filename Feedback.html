@@ -4,8 +4,8 @@
 
 
 <title>Page Title</title>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
--->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/theme.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" type="text/html" href="Review.html">
@@ -22,7 +22,7 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 100px;
+    font-size: 10px;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 50%;
@@ -34,7 +34,7 @@
 
 </head>
 <body>
-<h1>Report</h1>
+<h1 id="mytitle">Report</h1>
 
 <label for="social" Id= "Labell">Social</label>
 <button class="button" Id ="social"></button>
@@ -89,5 +89,10 @@ var sle=localStorage.getItem('hours');
 document.getElementById("sleep").innerHTML=sle;
 
 </script>
+
+<div  class="container container-fluid">
+ <button  type="button" class="btn btn-primary back" onclick="relocate_home()">Back </button>
+ </div>
+
 </body>
 </html>

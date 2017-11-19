@@ -17,20 +17,15 @@
 <style>
 
 input[type="checkbox"] {
-  font-size: 35px;
+  font-size: 15px;
    padding: 100px;
+   transform: scale(0.7);
 }
   h1 {
   text-align: center;
 
 }
-p {
-color: black ;
 
-}
-#back{
-  font-size: 35px;
-}
 
   </style>
 </head>
@@ -59,16 +54,11 @@ for (var j = 0; j < lenkey; j++) {
   var div = document.createElement("div");
    div.innerHTML = keyy[j];
    document.body.appendChild(div);
-   div.setAttribute("style", "font-size: 35px; color:Black;");
+   div.setAttribute("style", "font-size: 30px; color:Black;");
       vals = JSON.parse(localStorage.getItem(keyy[j]));
       len =vals.length;
   for (var i = 0; i < len; i++) {
 
-
-   //var div = document.createElement("div");
-    //div.innerHTML = vals[i];
-    //document.body.appendChild(div);
-    //div.setAttribute("style", "font-size: 25px;");''
 
 
 
@@ -88,21 +78,26 @@ for (var j = 0; j < lenkey; j++) {
     var la = document.createElement("LABEL");
         la.setAttribute("id", "myLabel");
         la.setAttribute("for", vals[i]);
-        la.setAttribute("style","font-size: 35px");
+        la.setAttribute("style","font-size: 25px ;color:#eceff1");
         la.innerHTML = vals[i];
        document.body.appendChild(la);
 
        document.body.appendChild(x);
      document.body.appendChild(newElem);
-      // x.insertBefore(newElem,la);
-    //document.body.insertBefore( y ,document.getElementsByTagName(vals[i]));
 
 
 
    }
 
 }
+// x.insertBefore(newElem,la);
+//document.body.insertBefore( y ,document.getElementsByTagName(vals[i]));
 
+
+//var div = document.createElement("div");
+ //div.innerHTML = vals[i];
+ //document.body.appendChild(div);
+ //div.setAttribute("style", "font-size: 25px;");''
 
 
 /*
@@ -138,27 +133,26 @@ for (var i = 0; i < len; i++) {
 
 </script>
 
-
-<div class="container">
-
-  <button id ="submit" type="button" class ="btn btn-danger custom" onclick="call()">Submit</button>
-
-</div>
-
-
+<!--
 <div id="myDIV">
 <p id="dem"></p>
 </div>
-<div>
-
-    <button id ="backfromreview" type="button" class="btn btn-danger" onclick="myFunction()">Back</button>
-
-  </div>
-
+-->
 <!--  <div>
     <button id ="submittofeedback" type="button" class ="btn btn-danger" onclick="submit_plan()">Submit</button>
   </div>
 -->
+
+<div class="container navbar-fixed-bottom">
+
+  <button type="button" class="btn btn-primary backReview" onclick="myFunction()">Back</button>
+
+  <button type="button" class ="btn btn-primary forwardReview" onclick="call()">Submit</button>
+
+
+  </div>
+
+
 
   <script>
   function myFunction() {
@@ -203,5 +197,10 @@ for (var i = 0; i < len; i++) {
   }
 
 </script>
+
+<!--space for the buttons when scrolling
+-->
+<div ><br><br><br></div>
+
 </body>
 </html>

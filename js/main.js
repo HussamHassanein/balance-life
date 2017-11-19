@@ -144,6 +144,13 @@ function submit_exercise(){
 }
 function back_plan()
 {  location.href = "myplan.html";}
+
+function reset_social(){
+  JSON.parse(localStorage.removeItem('social'));
+}
+
+
+
 /*function call() {
 
 
@@ -178,4 +185,3 @@ function back_plan()
 
 }
 */
-

@@ -35,12 +35,30 @@
 </a>
 </div>
 
+<script>
+var vals =[];
+var text="";
+var len;
+var vals ;
+var val;
+
+    vals = JSON.parse(localStorage.getItem('exercise'));
+    len =vals.length;
+for (var i = 0; i < len; i++) {
+  text = vals[i]  + "<br>";
+ var div = document.createElement("div");
+  div.innerHTML = vals[i];
+  document.body.appendChild(div);
+  div.setAttribute("contentEditable","true");
+
+}
+</script>
 
 <div  class="container container-fluid">
- <button id="buttone" type="button" class="btn btn-primary" onclick="submit_exercise()">Confirm </button>
+ <button  type="button" class="btn btn-primary forward" onclick="submit_exercise()">Confirm </button>
  </div>
 <div  class="container container-fluid">
- <button id="buttona" type="button" class="btn btn-primary" onclick="back_plan()">Back </button>
+ <button type="button" class="btn btn-primary back" onclick="back_plan()">Back </button>
  </div>
 
 </body>
