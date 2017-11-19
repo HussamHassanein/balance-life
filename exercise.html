@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
-  -->
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -16,51 +13,52 @@
   <script src="js/main.js"></script>
 
 </head>
+
 <body>
 
   <div class="container main-content">
 
-<h1>Exercise</h1>
+    <h1>Exercise</h1>
 
-</div>
+  </div>
 
 
-<textarea id="txtarea" rows="4" cols="50" placeholder="Insert your task here">
+  <textarea id="txtarea" rows="4" cols="50" placeholder="Insert your task here">
 </textarea>
 
 
-<div class="container container-fluid">
+  <div class="container container-fluid">
 
-  <a href="#" class="btn btn-danger btn-s"  onclick="showtext(), cleartext()">&#43;add a new task
+    <a href="#" class="btn btn-danger btn-s" onclick="showtext(), cleartext()">&#43;add a new task
 </a>
-</div>
+  </div>
 
-<script>
-var vals =[];
-var text="";
-var len;
-var vals ;
-var val;
+  <script>
+    var vals = [];
+    var text = "";
+    var len;
+    var vals;
+    var val;
 
     vals = JSON.parse(localStorage.getItem('exercise'));
-    len =vals.length;
-for (var i = 0; i < len; i++) {
-  text = vals[i]  + "<br>";
-  if (vals[i]!=null){
- var div = document.createElement("div");
-  div.innerHTML = vals[i];
-  document.body.appendChild(div);
-  div.setAttribute("contentEditable","true");
-}
-}
-</script>
+    len = vals.length;
+    for (var i = 0; i < len; i++) {
+      text = vals[i] + "<br>";
+      if (vals[i] != null) {
+        var div = document.createElement("div");
+        div.innerHTML = vals[i];
+        document.body.appendChild(div);
+        div.setAttribute("contentEditable", "true");
+      }
+    }
+  </script>
 
-<div  class="container container-fluid">
- <button  type="button" class="btn btn-primary forward" onclick="submit_exercise()">Confirm </button>
- </div>
-<div  class="container container-fluid">
- <button type="button" class="btn btn-primary back" onclick="back_plan()">Back </button>
- </div>
+  <div class="container container-fluid">
+    <button type="button" class="btn btn-primary forward" onclick="submit_exercise()">Confirm </button>
+  </div>
+  <div class="container container-fluid">
+    <button type="button" class="btn btn-primary back" onclick="back_plan()">Back </button>
+  </div>
 
 </body>
 

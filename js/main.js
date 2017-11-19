@@ -1,191 +1,72 @@
-var vals =[];
+var vals = [];
 
 
-function showtext(){
+function showtext() {
 
- var text = document.getElementById("txtarea");
- var div = document.createElement('div');
- //div.innerHTML = text.value;
- div.setAttribute("contentEditable","true");
-
- div.setAttribute("class","readonly_label");
- div.setAttribute("id","updated");
-
- //div.setAttribute('class', 'myclass'); // and make sure myclass has some styles in css
- //document.body.appendChild(div);
-
-
-div.innerHTML = text.value;
-document.body.appendChild(div);
-/*var str ="";
- $(".updated").each(function() {
-    str = str + $(this).text() + " ";
- })
- vals.push(str);*/
-/*var length = document.getElementsByClassName("readonly_label").length;
-
-for(var i = 0; i < length; i++){
-
-     var text3 =document.getElementsByClassName("readonly_label")[i].textContent;
-     vals.push(text3);
-}*/
- //var upp=$('#updated').text();
- //vals.push(upp);
-//document.body.appendChild(x);
-//document.getElementById(div).contentEditable = "true";
-//x.innerHTML=text.value;
-
- //document.querySelector("[contenteditable=true]");
- //var showarea = document.getElementById("adduserdata");
- //showarea.innerHTML=text.value;
-
-}
-function retrieve(view){
-  var text="";
-  var len;
-  var vals ;
-  var val;
-
-      vals = JSON.parse(localStorage.getItem(view));
-      len =vals.length;
-  for (var i = 0; i < len; i++) {
-    text = vals[i]  + "<br>";
-   var div = document.createElement("div");
-    div.innerHTML = vals[i];
-    document.body.appendChild(div);
-    div.setAttribute("contentEditable","true");
-
-}
-}
-/*
-function retrieve(){
-for(var i=0; i<vals.length; i++) {
+  var text = document.getElementById("txtarea");
   var div = document.createElement('div');
-  div.innerHTML = vals[i];
-  document.body.appendChild(vals[i]);
-  localStorage.setItem('studiesandwork', JSON.stringify(vals[i]));
+  div.setAttribute("contentEditable", "true");
+  div.setAttribute("class", "readonly_label");
+  div.setAttribute("id", "updated");
+  div.innerHTML = text.value;
+  document.body.appendChild(div);
 }
 
-}
-function getcheck(){
-  var keyy=['social','studiesandwork','exercise']
-  var lenkey=keyy.length;
-  var len;
-  var vals ;
-  for (var j = 0; j < lenkey; j++) {
-    var div = document.createElement("div");
-     div.innerHTML = keyy[j];
-      vals = JSON.parse(localStorage.getItem(keyy[j]));
-      len =vals.length;
-     for (var i = 0; i < len; i++) {
-       var x = document.getElementById("INPUT");
-  //     x.getAttribute("checked",);
-  var checkedValue = document.querySelector('x').value;
-
-  }}
-}
-*/
-
-
-function cleartext(){
+function cleartext() {
   var text = document.getElementById("txtarea");
   document.getElementById("txtarea").value = "";
 }
 
 
-function relocate_home()
-{
-     location.href = "main.html";
+function relocate_home() {
+  location.href = "main.html";
 }
 
-function submit_social()
-{
+function submit_social() {
 
   // localStorage.setItem('social', JSON.stringify(kewser));
   var length = document.getElementsByClassName("readonly_label").length;
 
-  for(var i = 0; i < length; i++){
+  for (var i = 0; i < length; i++) {
 
-       var text =document.getElementsByClassName("readonly_label")[i].textContent;
-       if(text == "")
-        continue;
-       vals.push(text);
+    var text = document.getElementsByClassName("readonly_label")[i].textContent;
+    if (text == "")
+      continue;
+    vals.push(text);
   }
 
-     localStorage.setItem('social', JSON.stringify(vals));
-     location.href = "myplan.html";
-}
-function submit_studiesandwork()
-{ var length = document.getElementsByClassName("readonly_label").length;
-
-for(var i = 0; i < length; i++){
-
-     var text =document.getElementsByClassName("readonly_label")[i].textContent;
-     if(text == "")
-      continue;
-     vals.push(text);
-}
-     localStorage.setItem('studiesandwork', JSON.stringify(vals));
-     location.href = "myplan.html";
+  localStorage.setItem('social', JSON.stringify(vals));
+  location.href = "myplan.html";
 }
 
-function submit_exercise(){
+function submit_studiesandwork() {
   var length = document.getElementsByClassName("readonly_label").length;
 
-  for(var i = 0; i < length; i++){
+  for (var i = 0; i < length; i++) {
 
-       var text =document.getElementsByClassName("readonly_label")[i].textContent;
-       if(text == "")
-        continue;
-       vals.push(text);
+    var text = document.getElementsByClassName("readonly_label")[i].textContent;
+    if (text == "")
+      continue;
+    vals.push(text);
+  }
+  localStorage.setItem('studiesandwork', JSON.stringify(vals));
+  location.href = "myplan.html";
+}
+
+function submit_exercise() {
+  var length = document.getElementsByClassName("readonly_label").length;
+
+  for (var i = 0; i < length; i++) {
+
+    var text = document.getElementsByClassName("readonly_label")[i].textContent;
+    if (text == "")
+      continue;
+    vals.push(text);
   }
   localStorage.setItem('exercise', JSON.stringify(vals));
   location.href = "myplan.html";
 }
-function back_plan()
-{  location.href = "myplan.html";}
 
-function reset_all(){
-  JSON.parse(localStorage.removeItem('sleep'));
-  JSON.parse(localStorage.removeItem('social'));
-  JSON.parse(localStorage.removeItem('exercise'));
-  JSON.parse(localStorage.removeItem('studiesandwork'));
+function back_plan() {
+  location.href = "myplan.html";
 }
-
-
-
-
-/*function call() {
-
-
-  var keyy=['social','studiesandwork','exercise'];
-  var lenkey=keyy.length;
-  for (var j = 0; j < lenkey; j++) {
-  var get;
-  get = JSON.parse(localStorage.getItem(keyy[j]));
-  var len =get.length;
-  for (var i = 0; i < len; i++) {
-  //localStorage.setItem('Input', get[i]);
-    var s1 = document.getElementById('get[i]');
-  localStorage.setItem('True', s1);
-    if ( s1.checked) {
-      //delete it
-      delete get[i];
-
-    }
-  }
-  localStorage.setItem(keyy[j], JSON.stringify(get));
-  }
-
-
-
-  location.href = "feedback.html";
-
-
-
-
-
-
-
-}
-*/
