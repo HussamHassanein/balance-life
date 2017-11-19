@@ -31,6 +31,7 @@ h1{
     position: absolute;
     bottom: 13px;
     right: 13px;
+
   }
 #Labell {
   font-size: 120px;
@@ -47,7 +48,18 @@ body{
   bottom: 13px;
 
 }
+#backfromreview
+{
+  position:relative;
+  left: 0;
+  bottom: 0;
 
+}
+#submittofeedback{
+    position:sticky;
+    right: 0%;
+    bottom: 0;
+}
 #submit
 {
   position: absolute;
