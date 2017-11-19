@@ -126,7 +126,7 @@ for (var j = 0; j < lenkey; j++) {
 
   <button type="button" class="btn btn-primary backReview" onclick="myFunction()">Back</button>
 
-  <button type="button" class ="btn btn-primary forwardReview" onclick="call()">Submit</button>
+  <button type="button" class ="btn btn-primary forwardReview" onclick="savesubmittedhrs(),call()">Submit</button>
 
 
   </div>
@@ -159,24 +159,10 @@ for (var j = 0; j < lenkey; j++) {
 //removeElm(s1);
      s1.parentElement.removeChild(s1);
       }
-
-
-
-
     }
     localStorage.setItem(keyy[j], JSON.stringify(get));
     }
-
-
-
     location.href = "feedback.html";
-
-
-
-
-
-
-
   }
 
   // x.insertBefore(newElem,la);
@@ -223,7 +209,7 @@ s1.removeChild(s1.lastChild);
 
 
 <div >
-  <p style ="color:black; font-size: 25px">sleep</>
+  <p style ="color:black; font-size: 30px">sleep</>
   <p>Number of hours slept</p>
 
   <form id="form1">
@@ -238,11 +224,10 @@ s1.removeChild(s1.lastChild);
       </form>
 </div>
 <script>
-function saveInput(){
+function savesubmittedhrs(){
   var eupdated = document.getElementById("DropdownIdupdated");
  var strUser = eupdated.options[eupdated.selectedIndex].text;
-
- localStorage["hours"]=strUser;
+ localStorage["hourssubmitted"]=strUser;
 }
 </script>
 

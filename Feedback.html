@@ -45,7 +45,7 @@
 <label for="social"  Id= "Labell">Exercise</label>
 <button class="button" Id ="exercise" ></button>
 <br>
-<label for="sleep" Id= "sleep"> Sleep</label>
+<label for="sleep" Id= "sleep">Sleep</label>
 
 <br>
 <!--<p Id="social" >Socail</p>
@@ -84,13 +84,41 @@ var newElem = document.getElementById("BR");
 
 }
 var result = (count/len)* 100 ;
-  var res= result + "%";
+//round the result to one decimal digit
+  var res= Math.round( result * 10 ) / 10 + "%";
     localStorage.setItem("example", JSON.stringify(res));
 document.getElementById(keyy[j]).innerHTML=res;
 }
   //document.getElementById("demo").innerHTML =text;
-var sle=localStorage.getItem('hours');
-document.getElementById("sleep").innerHTML=sle;
+var expectedsleep=localStorage.getItem('hours');
+//document.getElementById("sleep").innerHTML=sle;
+var realsleep=localStorage.getItem('hourssubmitted');
+//document.getElementById("sleep").innerHTML=sle;
+
+if (realsleep<7){
+  var div = document.createElement('div');
+  div.innerHTML="Sleep more little boy";
+  document.body.appendChild(div);
+}
+
+if (expectedsleep-realsleep==0){
+  var div = document.createElement('div');
+  div.innerHTML="well done planning and well deserved rest";
+  document.body.appendChild(div);
+}
+else if (10>realsleep>7)
+   {
+  var div = document.createElement('div');
+  div.innerHTML="good sleep";
+  document.body.appendChild(div);
+}
+else if (realsleep>10)
+   {
+  var div = document.createElement('div');
+  div.innerHTML="you have to sleep less";
+  document.body.appendChild(div);
+}
+
 
 </script>
 
