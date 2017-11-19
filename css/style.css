@@ -33,7 +33,10 @@ h1{
     right: 13px;
 
   }
-
+#Labell {
+  font-size: 120px;
+  color: Black;
+}
 body{
   background-color: #71BDF8;
 

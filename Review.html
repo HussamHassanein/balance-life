@@ -77,9 +77,12 @@ for (var j = 0; j < lenkey; j++) {
 
 
     var x = document.createElement("INPUT");
-    x.setAttribute("id", vals[i]);
+    var m= vals[i] + i;
+    x.setAttribute("id", vals[i] );
     x.setAttribute("type", "checkbox");
     x.setAttribute("name", vals[i]);
+    x.setAttribute("value",vals[i]);
+    x.setAttribute("class",vals[i]);
     x.setAttribute("style","zoom:2.5 ; position: absolute; right: 13px;");
     x.innerHTML = vals[i];
     var la = document.createElement("LABEL");
@@ -161,6 +164,44 @@ for (var i = 0; i < len; i++) {
   function myFunction() {
      location.href="Main.html";
   }
+  function call() {
+
+
+    var keyy=['social','studiesandwork','exercise'];
+    var lenkey=keyy.length;
+    for (var j = 0; j < lenkey; j++) {
+    var get;
+    get = JSON.parse(localStorage.getItem(keyy[j]));
+    var len =get.length;
+    for (var i = 0; i < len; i++) {
+    //localStorage.setItem('Input', get[i]);
+      var s1 = document.getElementById(get[i]);
+    localStorage.setItem('True', s1);
+      if ( s1.checked) {
+        //delete it
+//var child = document.getElementById(get[i]);
+          //child.parentNode.removeChild(child);
+ //s1.parentElement.removeChild(s1);
+        delete get[i];
+//removeElm(s1);
+     s1.parentElement.removeChild(s1);
+      }
+    }
+    localStorage.setItem(keyy[j], JSON.stringify(get));
+    }
+
+
+
+    location.href = "feedback.html";
+
+
+
+
+
+
+
+  }
+
 </script>
 </body>
 </html>
