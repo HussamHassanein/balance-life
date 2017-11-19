@@ -101,6 +101,37 @@ function submit_exercise(){
 }
 function back_plan()
 {  location.href = "myplan.html";}
-function call() {
+/*function call() {
+
+
+  var keyy=['social','studiesandwork','exercise'];
+  var lenkey=keyy.length;
+  for (var j = 0; j < lenkey; j++) {
+  var get;
+  get = JSON.parse(localStorage.getItem(keyy[j]));
+  var len =get.length;
+  for (var i = 0; i < len; i++) {
+  //localStorage.setItem('Input', get[i]);
+    var s1 = document.getElementById('get[i]');
+  localStorage.setItem('True', s1);
+    if ( s1.checked) {
+      //delete it
+      delete get[i];
+
+    }
+  }
+  localStorage.setItem(keyy[j], JSON.stringify(get));
+  }
+
+
+
   location.href = "feedback.html";
+
+
+
+
+
+
+
 }
+*/

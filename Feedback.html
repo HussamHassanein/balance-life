@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <title>Page Title</title>
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 -->
@@ -10,33 +12,80 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+
+    right: 10px;
+}
+</style>
 
 </head>
 <body>
+<h1>Report</h1>
 
-<h1>This is a hiiiiiiiiii</h1>
-<p>This is a paragraph.</p>
+<label for="social" Id= "Labell">Social</label>
+<button class="button" Id ="social"></button>
+<br>
+<label for="social"  Id= "Labell" >Studiesandwork</label>
+<button class="button" Id ="studiesandwork"></button>
+<br>
+<label for="social"  Id= "Labell">Exercise</label>
+<button class="button" Id ="exercise" ></button>
+<br>
+<label for="sleep" Id= "sleep"> Sleep</label>
+
+<br>
+<!--<p Id="social" >Socail</p>
+<p Id="studiesandwork" >Socail</p>
+<p Id="exercise" >Socail</p>
+<p Id="demo"> -->
+
 <script type="text/javascript">
+
+
+
+var text="";
 
 var keyy=['social','studiesandwork','exercise'];
 var lenkey=keyy.length;
 for (var j = 0; j < lenkey; j++) {
 var get;
+var count =0;
 get = JSON.parse(localStorage.getItem(keyy[j]));
 var len =get.length;
 for (var i = 0; i < len; i++) {
 //localStorage.setItem('Input', get[i]);
-  var s1 = document.getElementById('s1');
-localStorage.setItem('True', s1);
-  if ( s1.checked) {
+
+  if ( get[i] != null) {
     //delete it
-    delete get[i];
+    //text += get[i]  + "<br>" ;
+    //document.getElementById("demo").innerHTML =text;
+    count ++;
 
   }
-}
-localStorage.setItem(keyy[j], JSON.stringify(get));
-}
 
+}
+var result = (count/len)* 100 ;
+  var res= result + "%";
+    localStorage.setItem("example", JSON.stringify(res));
+document.getElementById(keyy[j]).innerHTML=res;
+}
+  //document.getElementById("demo").innerHTML =text;
+var sle=localStorage.getItem('hours');
+document.getElementById("sleep").innerHTML=sle;
 
 </script>
 </body>
