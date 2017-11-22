@@ -77,7 +77,11 @@ body{
 
 }
 
-
+#Editcolor
+{
+  color: black;
+  font-size: 20px;
+}
 #hours
 {
   position: absolute;

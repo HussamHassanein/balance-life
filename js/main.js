@@ -1,5 +1,5 @@
-var vals = [];
 
+var vals;
 
 function showtext() {
 
@@ -23,15 +23,22 @@ function relocate_home() {
 }
 
 function submit_social() {
-
+//var vals = [];
   // localStorage.setItem('social', JSON.stringify(kewser));
   var length = document.getElementsByClassName("readonly_label").length;
 
+localStorage.setItem('length', JSON.stringify(length));
   for (var i = 0; i < length; i++) {
 
     var text = document.getElementsByClassName("readonly_label")[i].textContent;
+    localStorage.setItem('text ', JSON.stringify(text));
     if (text == "")
       continue;
+
+        if(vals==null)
+        {
+          vals=[];
+        }
     vals.push(text);
   }
 
@@ -40,6 +47,7 @@ function submit_social() {
 }
 
 function submit_studiesandwork() {
+  //var vals = [];
   var length = document.getElementsByClassName("readonly_label").length;
 
   for (var i = 0; i < length; i++) {
@@ -47,6 +55,10 @@ function submit_studiesandwork() {
     var text = document.getElementsByClassName("readonly_label")[i].textContent;
     if (text == "")
       continue;
+      if(vals==null)
+      {
+        vals=[];
+      }
     vals.push(text);
   }
   localStorage.setItem('studiesandwork', JSON.stringify(vals));
@@ -54,6 +66,8 @@ function submit_studiesandwork() {
 }
 
 function submit_exercise() {
+  //var vals = [];
+
   var length = document.getElementsByClassName("readonly_label").length;
 
   for (var i = 0; i < length; i++) {
@@ -61,6 +75,10 @@ function submit_exercise() {
     var text = document.getElementsByClassName("readonly_label")[i].textContent;
     if (text == "")
       continue;
+      if(vals==null)
+      {
+        vals=[];
+      }
     vals.push(text);
   }
   localStorage.setItem('exercise', JSON.stringify(vals));

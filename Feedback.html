@@ -42,10 +42,10 @@
   <label for="social" Id="Labell">Social</label>
   <button class="button" Id="social"></button>
   <br>
-  <label for="social" Id="Labell">Studiesandwork</label>
+  <label for="studiesandwork" Id="Labell">Studiesandwork</label>
   <button class="button" Id="studiesandwork"></button>
   <br>
-  <label for="social" Id="Labell">Exercise</label>
+  <label for="exercise" Id="Labell">Exercise</label>
   <button class="button" Id="exercise"></button>
   <br>
   <label for="sleep" Id="sleep">Sleep</label>
@@ -62,12 +62,24 @@
       get = JSON.parse(localStorage.getItem(keyy[j]));
       var len = get.length;
       for (var i = 0; i < len; i++) {
-        if (get[i] != null) {
+        if (get[i] == null) {
           count++;
         }
 
       }
+      localStorage.setItem("example", JSON.stringify(res));
+      if (count==len)
+      {
+          var result = 100;
+      }
+      else if(count==0)
+      {
+        var result= 0;
+      }
+      else
+      {
       var result = (count / len) * 100;
+    }
       //Math.round(), rounds the result to one decimal digit
       var res = Math.round(result * 10) / 10 + "%";
       localStorage.setItem("example", JSON.stringify(res));
@@ -75,26 +87,39 @@
     }
     var expectedsleep = localStorage.getItem('hours');
     var realsleep = localStorage.getItem('hourssubmitted');
-
-    if (realsleep < 7) {
+      localStorage.setItem("realsleep", JSON.stringify(realsleep));
+      if (realsleep == null) {
+        var div = document.createElement('div');
+        div.setAttribute("Id","Editcolor");
+        div.innerHTML = "Waiting your seelp review";
+        document.body.appendChild(div);
+      }
+    else if (realsleep <= 7) {
       var div = document.createElement('div');
+      div.setAttribute("Id","Editcolor");
       div.innerHTML = "Sleep more little boy";
       document.body.appendChild(div);
     }
 
-    if (expectedsleep - realsleep == 0) {
+    else if (expectedsleep - realsleep == 0) {
       var div = document.createElement('div');
+      div.setAttribute("Id","Editcolor");
       div.innerHTML = "well done planning and well deserved rest";
       document.body.appendChild(div);
-    } else if (10 > realsleep > 7) {
+    }
+    else if (10 >= realsleep > 7) {
       var div = document.createElement('div');
+      div.setAttribute("Id","Editcolor");
       div.innerHTML = "good sleep";
       document.body.appendChild(div);
-    } else if (realsleep > 10) {
+    }
+    else if (realsleep > 10) {
       var div = document.createElement('div');
+      div.setAttribute("Id","Editcolor");
       div.innerHTML = "you have to sleep less";
       document.body.appendChild(div);
     }
+    
   </script>
 
   <div class="container container-fluid">
